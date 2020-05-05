@@ -44,6 +44,8 @@ var seattle = {
     }
   },
   render: function (){
+    seattle.calcCustomersEachHour();
+    seattle.calcCookiesSoldEachHour();
     var seattleElement = document.gertElementById('seattle');
     //get the parent element from the DOM
     // 1. create an element
@@ -67,8 +69,6 @@ var seattle = {
   }
 };
 
-seattle.calcCustomersEachHour();
-seattle.calcCookiesSoldEachHour();
 seattle.render();
 
 // got this function from MDN MAth.random
