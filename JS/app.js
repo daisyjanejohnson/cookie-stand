@@ -11,15 +11,21 @@ var seattle = {
   cookiesPerHour: [],
   randCustPerHour: function () {
     for (var i = 0; i < this.hoursOpen.length; i++) {
-      var randoCust = Math.floor(Math.random() * (this.maxCust - this.minCust + 1) + this.minCust);
+      var randoCust = Math.random() * (this.maxCust - this.minCust + 1) + this.minCust;
+
+      randoCust = randoCust * this.avgCookie;
+      randoCust = Math.floor(randoCust);
       this.customersPerHour.push(randoCust);
     }
-    console.log('Customers per hour in seattle = ',this.customersPerHour);
   },
-  theCookiesPerHour: function () {
-  },
+  cookiesPerDay: function(){
+    
+  }
 };
+seattle.randCustPerHour();
 console.log(seattle.customersPerHour);
+
+
 
 // var tokyo = {
 //   hoursOpen: ['6am', '7am', '8am', '9am', '10am', '11am', '12am', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'],
