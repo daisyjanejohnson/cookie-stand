@@ -167,7 +167,7 @@ var dubai = {
   render: function () {
     dubai.calcCustomersPerHour();
     dubai.calcCookiesSoldEachHour();
-    var dubaiElement = document.getElementById('tokyo');
+    var dubaiElement = document.getElementById('dubai');
 
     //render the name of the store
     var listItem = document.createElement('li');
@@ -221,7 +221,7 @@ var paris = {
   render: function () {
     paris.calcCustomersPerHour();
     paris.calcCookiesSoldEachHour();
-    var parisElement = document.getElementById('tokyo');
+    var parisElement = document.getElementById('paris');
 
     //render the name of the store
     var listItem = document.createElement('li');
@@ -243,4 +243,58 @@ var paris = {
 
 
 paris.render();
+
+
+// Lima
+var lima = {
+  name: 'Lima',
+  minCustomersEachHour:2,
+  maxCustomersEachHour:16,
+  avgCookieSoldPerCustomer:4.6,
+  customersEachHour: [],
+  CookiesSoldEachHour: [],
+  totalCookiesPerDay: 0,
+
+  calcCustomersPerHour: function () {
+    for (var i = 0; i < hours.length; i++) {
+      var customersThisHour = getRandomNumber(this.minCustomersEachHour, this.maxCustomersEachHour);
+
+      this.customersEachHour.push(customersThisHour);
+    }
+  },
+
+  calcCookiesSoldEachHour: function () {
+    for (var i = 0; i < this.customersEachHour.length; i++) {
+      var wholeCookiesSoldForOneHour = Math.ceil(this.customersEachHour[i] * this.avgCookieSoldPerCustomer);
+
+      this.cookiesSoldEachHour.push(wholeCookiesSoldForOneHour);
+
+      this.totalCookiesPerDay += wholeCookiesSoldForOneHour;
+    }
+  },
+  render: function () {
+    lima.calcCustomersPerHour();
+    lima.calcCookiesSoldEachHour();
+    var limaElement = document.getElementById('lima');
+
+    //render the name of the store
+    var listItem = document.createElement('li');
+    listItem.textContent = this.name;
+    limaElement.appendChild(listItem);
+
+    //render cookiesSoldEachHour
+    for (var i = 0; i < hours.length; i++) {
+      listItem = document.createElement('li');
+      listItem.textContent = `${hours[i]}, ${this.cookiesSoldEachHour[i]} cookies.`;
+      limaElement.appendChild(listItem);
+    }
+    // this will render totalCookiesPerDay to the DOM
+    listItem = document.createElement('li');
+    listItem.textContent = this.totalCookiesPerDay;
+    limaElement.appendChild(listItem);
+  }
+};
+
+lima.render();
+
 
