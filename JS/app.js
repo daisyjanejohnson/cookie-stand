@@ -9,19 +9,28 @@ var seattle = {
   avgCookie: 6.3,
   customersPerHour: [],
   cookiesPerHour: [],
-  randCustPerHour: function () {
-    for (var i = 0; i < this.hoursOpen.length; i++) {
-      var randoCust = Math.random() * (this.maxCust - this.minCust + 1) + this.minCust;
-
-      randoCust = randoCust * this.avgCookie;
-      randoCust = Math.floor(randoCust);
-      this.customersPerHour.push(randoCust);
-    }
+  custPerHour: function () {
+    var min = this.minCust;
+    var max = this.maxCust;
+    var customers = Math.floor(Math.random() * (max - min + 1)) + min;
+    return customers;
   },
-  cookiesPerDay: function(){
-    
+
+  cookPerHour: function () {
+    var customers = this.custPerHour();
+    return Math.floor(customers * this.avgCookie);
+  },
+  cookiePerDay: function () {
+
+  },
+  render: function () {
+    var parent = document.getElementById('seattle)');
+    var listItem = document.createElement('li');
+    listItem.textContent = this.seattle;
+    parent.appendChild(listItem);
   }
 };
+
 seattle.randCustPerHour();
 console.log(seattle.customersPerHour);
 
