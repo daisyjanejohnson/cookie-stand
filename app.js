@@ -36,32 +36,32 @@ Store.prototype.calcCookiesSoldEachHour = function () {
 Store.prototype.render = function () {
   this.calcCustomersPerHour();
   this.calcCookiesSoldEachHour();
-  var mainElement = document.getElementById('stores');
+  var tableElement = document.getElementById('table');
   //get the parent element from the DOM
   // 1. create an element
   //2. fll it with text content
   //3. append
   //render the name of the store
-  var unorderedL = document.createElement('ul');
+  var tableRow = document.createElement('tr');
 
-  var listItem = document.createElement('li');
-  listItem.textContent = this.location;
-  unorderedL.appendChild(listItem);
+  var tableHeader = document.createElement('th');
+  tableHeader.textContent = this.location;
+  tableRow.appendChild(tableHeader);
 
   //render cookiesSoldEachHour
   for (var i = 0; i < hours.length; i++) {
-    listItem = document.createElement('li');
-    listItem.textContent = `${hours[i]}, ${this.cookiesSoldEachHour[i]} cookies.`;
-    unorderedL.appendChild(listItem);
+    var tableData = document.createElement('td');
+    tableData.textContent = `${hours[i]}, ${this.cookiesSoldEachHour[i]} cookies.`;
+    tableRow.appendChild(tableData);
   }
 
   // this will render totalCookiesPerDay to the DOM
-  listItem = document.createElement('li');
-  listItem.textContent = `total ${this.totalCookiesPerDay}`;
-  unorderedL.appendChild(listItem);
+  tableData = document.createElement('td');
+  tableData.textContent = `total ${this.totalCookiesPerDay}`;
+  tableRow.appendChild(tableData);
 
   // put UL into main element
-  mainElement.appendChild(unorderedL);
+  tableElement.appendChild(tableRow);
 };
 
 
