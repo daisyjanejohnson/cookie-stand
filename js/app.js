@@ -168,10 +168,7 @@ var dubai = {
     dubai.calcCustomersPerHour();
     dubai.calcCookiesSoldEachHour();
     var dubaiElement = document.getElementById('tokyo');
-    //get the parent element from the DOM
-    // 1. create an element
-    //2. fll it with text content
-    //3. append
+
     //render the name of the store
     var listItem = document.createElement('li');
     listItem.textContent = this.name;
@@ -190,5 +187,60 @@ var dubai = {
   }
 };
 
-
 dubai.render();
+
+// Paris
+var paris = {
+  name: 'Paris',
+  minCustomersEachHour:20,
+  maxCustomersEachHour:38,
+  avgCookieSoldPerCustomer:2.3,
+  customersEachHour: [],
+  cookiesSoldEachHour: [],
+  totalCookiesPerDay: 0,
+
+  calcCustomersPerHour: function () {
+    // calculate the customers each hour and populate the array
+    for (var i = 0; i < hours.length; i++) {
+      var customersThisHour = getRandomNumber(this.minCustomersEachHour, this.maxCustomersEachHour);
+
+      this.customersEachHour.push(customersThisHour);
+    }
+  },
+
+  calcCookiesSoldEachHour: function () {
+    // multiply the customers by the average cookies each customer buys
+    for (var i = 0; i < this.customersEachHour.length; i++) {
+      var wholeCookiesSoldForOneHour = Math.ceil(this.customersEachHour[i] * this.avgCookieSoldPerCustomer);
+
+      this.cookiesSoldEachHour.push(wholeCookiesSoldForOneHour);
+
+      this.totalCookiesPerDay += wholeCookiesSoldForOneHour;
+    }
+  },
+  render: function () {
+    paris.calcCustomersPerHour();
+    paris.calcCookiesSoldEachHour();
+    var parisElement = document.getElementById('tokyo');
+
+    //render the name of the store
+    var listItem = document.createElement('li');
+    listItem.textContent = this.name;
+    parisElement.appendChild(listItem);
+
+    //render cookiesSoldEachHour
+    for (var i = 0; i < hours.length; i++) {
+      listItem = document.createElement('li');
+      listItem.textContent = `${hours[i]}, ${this.cookiesSoldEachHour[i]} cookies.`;
+      parisElement.appendChild(listItem);
+    }
+    // this will render totalCookiesPerDay to the DOM
+    listItem = document.createElement('li');
+    listItem.textContent = this.totalCookiesPerDay;
+    parisElement.appendChild(listItem);
+  }
+};
+
+
+paris.render();
+
