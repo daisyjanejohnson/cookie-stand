@@ -63,7 +63,7 @@ Store.prototype.render = function () {
 
   // // this will render totalCookiesPerDay to the DOM
   tableData = document.createElement('td');
-  tableData.textContent = `total ${this.totalCookiesPerDay}`;
+  tableData.textContent = this.totalCookiesPerDay;
   tableRow.appendChild(tableData);
 
   // // put UL into main element
@@ -80,7 +80,9 @@ for (var i = 0; i < hours.length; i++) {
   hoursHeader.textContent = hours[i];
   hoursRow.appendChild(hoursHeader);
 }
-
+hoursHeader = document.createElement('th');
+hoursHeader.textContent = 'Daily Total';
+hoursRow.appendChild(hoursHeader);
 parentElement.appendChild(hoursRow);
 
 // use keyword new
