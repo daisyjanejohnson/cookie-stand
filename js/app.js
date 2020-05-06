@@ -1,10 +1,6 @@
 'use strict';
-var parentElement = document.getElementById('table');
+
 var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
-// random # function
-function getRandomNumber(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
 
 function Store(location, minCustomersEachHour, maxCustomersEachHour, avgCookieSoldPerCustomer) {
   this.location = location;
@@ -40,13 +36,11 @@ Store.prototype.render = function () {
   this.calcCustomersPerHour();
   this.calcCookiesSoldEachHour();
   //get the parent element from the DOM
-
   // 1. create an element
   // 2. fll it with text content
   // 3. append
 
-
-
+  // ONLY FOR THE BODY OF THE TABLE
   // put 'Location' on a table.
   var tableRow = document.createElement('tr');
   var tableHeader = document.createElement('th');
@@ -55,7 +49,7 @@ Store.prototype.render = function () {
 
 
   // //render cookiesSoldEachHour
-  for (var i = 0; i < hours.length; i++) {
+  for (var i = 0; i < this.cookiesSoldEachHour.length; i++) {
     var tableData = document.createElement('td');
     tableData.textContent = this.cookiesSoldEachHour[i];
     tableRow.appendChild(tableData);
@@ -71,7 +65,10 @@ Store.prototype.render = function () {
 
 };
 
-//put 'Hours'
+// Parent Element for TABLE
+var parentElement = document.getElementById('table');
+
+//put 'Hours' on Header
 var hoursRow = document.createElement('tr');
 var hoursHeader = document.createElement('th');
 hoursRow.appendChild(hoursHeader);
@@ -100,3 +97,8 @@ tokyo.render();
 dubai.render();
 paris.render();
 lima.render();
+
+// helper functions
+function getRandomNumber(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
