@@ -1,6 +1,6 @@
 'use strict';
-
-var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12am', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
+var parentElement = document.getElementById('table');
+var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
 // random # function
 function getRandomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -21,6 +21,7 @@ Store.prototype.calcCustomersPerHour = function () {
     var customersThisHour = getRandomNumber(this.minCustomersEachHour, this.maxCustomersEachHour);
 
     this.customersEachHour.push(customersThisHour);
+    console.log('customers each hour', this.customersEachHour);
   }
 };
 Store.prototype.calcCookiesSoldEachHour = function () {
@@ -31,40 +32,56 @@ Store.prototype.calcCookiesSoldEachHour = function () {
     this.cookiesSoldEachHour.push(wholeCookiesSoldForOneHour);
 
     this.totalCookiesPerDay += wholeCookiesSoldForOneHour;
+    console.log(this.cookiesSoldEachHour);
   }
+  console.log(this.totalCookiesPerDay);
 };
 Store.prototype.render = function () {
   this.calcCustomersPerHour();
   this.calcCookiesSoldEachHour();
-  var tableElement = document.getElementById('table');
   //get the parent element from the DOM
-  // 1. create an element
-  //2. fll it with text content
-  //3. append
-  //render the name of the store
-  var tableRow = document.createElement('tr');
 
+  // 1. create an element
+  // 2. fll it with text content
+  // 3. append
+
+
+
+  // put 'Location' on a table.
+  var tableRow = document.createElement('tr');
   var tableHeader = document.createElement('th');
   tableHeader.textContent = this.location;
   tableRow.appendChild(tableHeader);
 
-  //render cookiesSoldEachHour
+
+  // //render cookiesSoldEachHour
   for (var i = 0; i < hours.length; i++) {
     var tableData = document.createElement('td');
-    tableData.textContent = `${hours[i]}, ${this.cookiesSoldEachHour[i]} cookies.`;
+    tableData.textContent = this.cookiesSoldEachHour[i];
     tableRow.appendChild(tableData);
   }
 
-  // this will render totalCookiesPerDay to the DOM
+  // // this will render totalCookiesPerDay to the DOM
   tableData = document.createElement('td');
   tableData.textContent = `total ${this.totalCookiesPerDay}`;
   tableRow.appendChild(tableData);
 
-  // put UL into main element
-  tableElement.appendChild(tableRow);
+  // // put UL into main element
+  parentElement.appendChild(tableRow);
+
 };
 
+//put 'Hours'
+var hoursRow = document.createElement('tr');
+var hoursHeader = document.createElement('th');
+hoursRow.appendChild(hoursHeader);
+for (var i = 0; i < hours.length; i++) {
+  hoursHeader = document.createElement('th');
+  hoursHeader.textContent = hours[i];
+  hoursRow.appendChild(hoursHeader);
+}
 
+parentElement.appendChild(hoursRow);
 
 // use keyword new
 
