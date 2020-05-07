@@ -81,3 +81,30 @@ p.hours{
   background-color:#6A9F92;
 }
 
+h2.contact{
+  font-size: 15pt;
+  font-weight: bold;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin-top:50px; 
+}
+
+p.contact{
+  border: 2px dotted black;
+  width:300px;
+  margin-left: 40px;
+  text-align:center;
+  font-weight: bold;
+}
+
+h2.merch{
+  font-size: 15pt;
+  font-weight: bold;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin-top:50px; 
+}
+
+footer{
+  background-color: #6A9F92;
+  border: 2px solid #424442;
+  height:100px;
+}
