@@ -1,6 +1,9 @@
 'use strict';
 
 var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
+var allStores = [];
+// Parent Element for TABLE
+var parentElement = document.getElementById('table');
 
 function Store(location, minCustomersEachHour, maxCustomersEachHour, avgCookieSoldPerCustomer) {
   this.location = location;
@@ -10,6 +13,7 @@ function Store(location, minCustomersEachHour, maxCustomersEachHour, avgCookieSo
   this.customersEachHour = [];
   this.cookiesSoldEachHour = [];
   this.totalCookiesPerDay = 0;
+  allStores.push(this);
 }
 Store.prototype.calcCustomersPerHour = function () {
   // calculate the customers each hour and populate the array
@@ -17,7 +21,6 @@ Store.prototype.calcCustomersPerHour = function () {
     var customersThisHour = getRandomNumber(this.minCustomersEachHour, this.maxCustomersEachHour);
 
     this.customersEachHour.push(customersThisHour);
-    console.log('customers each hour', this.customersEachHour);
   }
 };
 Store.prototype.calcCookiesSoldEachHour = function () {
@@ -28,9 +31,7 @@ Store.prototype.calcCookiesSoldEachHour = function () {
     this.cookiesSoldEachHour.push(wholeCookiesSoldForOneHour);
 
     this.totalCookiesPerDay += wholeCookiesSoldForOneHour;
-    console.log(this.cookiesSoldEachHour);
   }
-  console.log(this.totalCookiesPerDay);
 };
 Store.prototype.render = function () {
   this.calcCustomersPerHour();
@@ -65,8 +66,6 @@ Store.prototype.render = function () {
 
 };
 
-// Parent Element for TABLE
-var parentElement = document.getElementById('table');
 
 //put 'Hours' on Header
 var hoursRow = document.createElement('tr');
@@ -81,6 +80,59 @@ hoursHeader = document.createElement('th');
 hoursHeader.textContent = 'Daily Total';
 hoursRow.appendChild(hoursHeader);
 parentElement.appendChild(hoursRow);
+
+// footer
+function renderFooterRow() {
+  // create a table row
+  var tableRow = document.createElement('tr');
+  // create a td
+  var tableHeader = document.createElement('th');
+  //fill it with the sum
+  tableHeader.textContent = 'Hourly Total';
+  //append it to the table row
+  tableRow.appendChild(tableHeader);
+
+  //outer loop for each hour
+  var totalOfAllTotals = 0;
+  for (var i = 0; i < hours.length; i++) {
+    var sum = 0;
+
+    // inner loop is going to loop over each store
+    //access my cookies sold each hour array at the same position as my outer loop
+    for (var j = 0; j < allStores.length; j++) {
+      sum += allStores[j].cookiesSoldEachHour[i];
+    }
+
+    totalOfAllTotals += sum;
+    // totalOfAllTotals = totalOfAllToal + sum
+
+    // create a td
+    var tableData = document.createElement('td');
+    //fill it with the sum
+    tableData.textContent = sum;
+    //append it to the table row
+    tableRow.appendChild(tableData);
+
+
+  }
+  //append the totalofalltotals
+  // create a td
+  tableData = document.createElement('td');
+  // Add totalofalltotals
+  tableData.textContent = totalOfAllTotals;
+  //append td to row
+  tableRow.appendChild(tableData);
+  //append table row to parent Element
+  parentElement.appendChild(tableRow);
+}
+
+
+
+
+// helper functions
+function getRandomNumber(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
 // use keyword new
 
@@ -97,8 +149,4 @@ tokyo.render();
 dubai.render();
 paris.render();
 lima.render();
-
-// helper functions
-function getRandomNumber(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+renderFooterRow();
