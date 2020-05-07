@@ -1,0 +1,83 @@
+body{
+  background-color: #fa8072;
+}
+/* Header */
+header{
+  background-color: #6A9F92;
+  border: 2px solid #424442;
+  height:100px;
+  
+}
+img{
+  width:200px;
+  float:right;
+  overflow: auto;
+}
+header>h1{
+  font-size:40pt;
+  font-weight:bold;
+  text-align:center;
+  padding-top:20px;
+  font-family: 'Luckiest Guy', cursive;
+  
+}
+header h2{
+  text-align:center;
+  font-family: 'Luckiest Guy', cursive;
+}
+header li{
+  flex: right;
+
+}
+
+#family{
+  overflow: auto;
+}
+
+/* Intro */
+
+.open{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight:bold;
+  padding-top:30pt;
+  font-size: 20px;
+}
+section.open{
+  display:inline-block;
+}
+#p1{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+ 
+h2.story{
+  font-size: 15pt;
+  font-weight: bold;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin-top:50px;
+}
+
+p.story{
+  border: 1px solid black;
+  height: 150px;
+  width: 50%;
+  text-align:center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  padding-top:20px;
+}
+
+h2.hours{
+  font-size: 15pt;
+  font-weight: bold;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin-top:50px;
+}
+
+p.hours{
+  border: 2px dotted black;
+  width:180px;
+  margin-left: 40px;
+  text-align:center;
+  font-weight: bold;
+  background-color:#6A9F92;
+}
+
