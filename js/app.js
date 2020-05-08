@@ -1,10 +1,20 @@
 'use strict';
 
-var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
 var allStores = [];
+
+var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm'];
+
 // Parent Element for TABLE
 var parentElement = document.getElementById('table');
 
+// object instances
+var seattle = new Store('Seattle', 23, 65, 6.3);
+var tokyo = new Store('Tokyo', 3, 24, 1.2);
+var dubai = new Store('Dubai', 11, 38, 3.7);
+var paris = new Store('Paris', 20, 38, 2.3);
+var lima = new Store('Lima', 2, 16, 4.6);
+
+// constructor function
 function Store(location, minCustomersEachHour, maxCustomersEachHour, avgCookieSoldPerCustomer) {
   this.location = location;
   this.minCustomersEachHour = minCustomersEachHour;
@@ -82,6 +92,7 @@ hoursHeader.textContent = 'Daily Total';
 hoursRow.appendChild(hoursHeader);
 parentElement.appendChild(hoursRow);
 
+
 // footer
 function renderFooterRow() {
   var tableRow = document.createElement('tr');
@@ -123,15 +134,9 @@ function getRandomNumber(min, max) {
 // function addElement(element, content, parent){
 
 
-// object instances
-var seattle = new Store('Seattle', 23, 65, 6.3);
-var tokyo = new Store('Tokyo', 3, 24, 1.2);
-var dubai = new Store('Dubai', 11, 38, 3.7);
-var paris = new Store('Paris', 20, 38, 2.3);
-var lima = new Store('Lima', 2, 16, 4.6);
 
 
-
+// Form
 
 var form = document.getElementById('form');
 
@@ -146,16 +151,16 @@ function handleFormSubmit(event) {
   var avgCookieSoldPerCustomer = parseInt(event.target.avgCookieSoldPerCustomer.value);
 
   new Store(location, minCustomersEachHour, maxCustomersEachHour, avgCookieSoldPerCustomer);
-  // delete rows
-  var deleteRows = document.getElementsByClassName('storeLocations');
-  for (var i = 0; i<deleteRows.length;i++){
-    deleteRows[0].remove();
-  }
-  for (var j = 0; j < allStores.length; j++){
-    allStores[j].render();
-  }
-  renderFooterRow;
+
+  var row = document.getElementById('table');
+  row.removeChild(row.lastChild);
+
+  location.render();
+
+  renderHeader();
+  renderFooterRow();
 }
+form.addEventListener('submit', handleFormSubmit);
 
 // render to DOM
 seattle.render();
@@ -166,6 +171,6 @@ lima.render();
 renderFooterRow();
 
 // Listener
-form.addEventListener('submit', handleFormSubmit);
+
 
 
