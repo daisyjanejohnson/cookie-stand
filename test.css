@@ -1,0 +1,28 @@
+* {
+  background-color: #FA7C92;
+}
+.mainHead{
+  background-color: #FFF7C0;
+  text-align:center;
+  padding: 20px;
+}
+
+/* Navbar Container */
+.topnav {
+  overflow: hidden;
+  background-color: #6ec4db;
+}
+/* Navbar Links */
+.topnav a{
+  float:left;
+  display:block;
+  color: #66ab8c;
+  text-align:center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+/* Links change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
