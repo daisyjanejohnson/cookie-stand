@@ -1,32 +1,206 @@
-* {
-  background-color: #FA7C92;
+body {
+  margin: 0px auto;
+  width: 100%;
+  background-color: #ff9a91;
+}
+header{
+  height: 250px;
+}
+.headGroup{
+  margin-top:20px;
+  background-color: #FFF7C0;
+  border: 4px solid #66ab8c;
+  padding-top: 20px;
+  padding-bottom:20px;
+}
+img{
+  float:left;
+  width: 250px;
+}
+.headText{
+  text-align:center;
+  margin-left: 50px;
 }
 .mainHead{
-  background-color: #FFF7C0;
+  font-size:40pt;
+  font-weight:bold;
   text-align:center;
-  padding: 20px;
+  padding-top:20px;
+  font-family: 'Luckiest Guy', cursive;
 }
-
+header h2{
+  text-align:center;
+  font-family: 'Luckiest Guy', cursive;
+}
 /* Navbar Container */
-.topnav {
-  overflow: hidden;
-  background-color: #6ec4db;
+.topnav{
+  float:right;
+  margin-right: 100px;
+  margin-top: -30px;
+}
+.topnav li {
+  display: inline;
+  margin-left:10px;
 }
 /* Navbar Links */
 .topnav a{
-  float:left;
-  display:block;
+  background-color:#66ab8c;
+  color: white;
+  font-size: 15px;
+  padding: 14px 25px;
+  margin-top: -60px;
+  list-style-type: none;
+  width: 350px;
+  text-decoration: none;
+}
+/* .topnav a{
+  display:inline-block;
   color: #66ab8c;
   text-align:center;
   padding: 14px 16px;
   text-decoration: none;
-}
+} */
 /* Links change color on hover */
 .topnav a:hover {
-  background-color: #ddd;
+  background-color: #ff9a91;
   color: black;
 }
 
-#header{
-  display:inline-block;
+/*  Hours of Operation */
+.hours{
+  border: 2px solid #FFF7C0;
+  width:750px;
+  padding-top:30px;
+  padding-bottom: 100px;
+  margin-left: 550px;
+  text-align:center;
+  font-weight: bold;
+  background-color:#66ab8c;
+}
+#hoursHead{
+  margin-top: -20px;
+  padding-bottom:20px;
+  font-size: 35px;
+}
+#hoursText{
+  font-size: 20px;
+}
+#hoursText img{
+  padding-top: 10px;
+  margin-left:250px;
+}
+.story{
+  float:right;
+  position: relative;
+  margin-right: 250px;
+  margin-top:-210px;
+  border: 2px solid #FFF7C0;
+  height: 620px;
+  width:300px;
+  padding-top:30px;
+  padding-bottom: 80px;
+  text-align:center;
+  font-weight: bold;
+  background-color:#66ab8c;
+}
+#storyImg{
+  margin-top: -20px;
+  margin-left: 25px;
+}
+#storyHead{
+  font-size: 20pt;
+  padding-top: 150px;
+  padding-bottom: 20px;
+}
+
+#storyText{
+  line-height: 25px;
+}
+.contact{
+  border: 2px solid #FFF7C0;
+  width:750px;
+  height:380px;
+  padding-top:30px;
+  padding-bottom: 80px;
+  margin-top: 30px;
+  margin-left: 550px;
+  text-align:center;
+  font-weight: bold;
+  background-color:#66ab8c;
+}
+
+.banners{
+display:inline-block;
+margin-top:20px;
+
+}
+.banner1{
+  float:left;
+  border: 2px solid #FFF7C0;
+  padding-top:30px;
+  padding-bottom: 100px;
+  margin-left: 200px;
+  text-align:center;
+  font-weight: bold;
+  background-color:#66ab8c;
+  width: 500px;
+  height: 150px;
+}
+#banner1Head{
+  margin-top:-20px;
+  font-size: 20pt;
+  padding-bottom: 10px;
+}
+#banner1Text{
+  padding-top:50px;
+}
+#cutterPic{
+  padding-left:10px;
+}
+.banner2{
+  float:right;
+  border: 2px solid #FFF7C0;
+  padding-top:30px;
+  padding-bottom: 100px;
+ margin-left: 450px;
+  text-align:center;
+  font-weight: bold;
+  background-color:#66ab8c;
+  width: 500px;
+  height: 150px;
+}
+#banner2Head{
+  margin-top:-20px;
+  font-size: 20pt;
+  padding-bottom: 10px;
+}
+#bannerText{
+  padding-top:50px;
+}
+#shirtImg{
+  margin-left:120px;
+}
+
+.locations{  
+  float:left;
+  margin-right: 400px;
+  margin-left:200px;
+  margin-top:-733px;
+  border: 2px solid #FFF7C0;
+  height: 620px;
+  width:300px;
+  padding-top:30px;
+  padding-bottom: 80px;
+  text-align:center;
+  font-weight: bold;
+  background-color:#66ab8c;
+}
+
+footer{
+  height:50px;
+  margin-top:20px;
+  background-color: #FFF7C0;
+  border: 4px solid #66ab8c;
+  padding-top: 100px;
+  padding-bottom:20px;
 }
