@@ -151,7 +151,7 @@ function handleFormSubmit(event) {
   // loop over object instances including new one
   //call render function on all of them
   for (var i=0; i<allStores.length;i++){
-    allStores[i].render;
+    allStores[i].render();
   }
 
   renderFooterRow();
