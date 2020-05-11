@@ -148,13 +148,14 @@ function handleFormSubmit(event) {
 
   buildHeaderRow();
 
+  // loop over object instances including new one
+  //call render function on all of them
   for (var i=0; i<allStores.length;i++){
     allStores[i].render;
   }
 
   renderFooterRow();
 }
-form.addEventListener('submit', handleFormSubmit);
 
 buildHeaderRow();
 
@@ -164,3 +165,6 @@ dubai.render();
 paris.render();
 lima.render();
 renderFooterRow();
+
+form.addEventListener('submit', handleFormSubmit);
+

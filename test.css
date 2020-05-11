@@ -285,3 +285,12 @@ tr:nth-child(odd){
   font-family: 'Raleway', sans-serif;
 }
   
+label{
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+  margin-left: 50px;
+}
+
+#shopImg{
+  display:center;
+}
