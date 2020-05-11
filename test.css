@@ -11,7 +11,7 @@ header{
   background-color: #FFF7C0;
   border: 4px solid #66ab8c;
   padding-top: 20px;
-  padding-bottom:20px;
+  padding-bottom:30px;
 }
 img{
   float:left;
@@ -37,6 +37,7 @@ header h2{
   float:right;
   margin-right: 100px;
   margin-top: -30px;
+  font-family: 'Luckiest Guy', cursive;
 }
 .topnav li {
   display: inline;
@@ -81,14 +82,18 @@ header h2{
   margin-top: -20px;
   padding-bottom:20px;
   font-size: 35px;
+  font-family: 'Luckiest Guy', cursive;
 }
 #hoursText{
   font-size: 20px;
+  font-family: 'Raleway', sans-serif;
 }
 #hoursText img{
   padding-top: 10px;
   margin-left:250px;
+  
 }
+/*  Our Story Section */
 .story{
   float:right;
   position: relative;
@@ -111,11 +116,14 @@ header h2{
   font-size: 20pt;
   padding-top: 150px;
   padding-bottom: 20px;
+  font-family: 'Luckiest Guy', cursive;
 }
 
 #storyText{
-  line-height: 25px;
+  line-height: 22px;
+  font-family: 'Raleway', sans-serif;
 }
+/* Contact Us section */
 .contact{
   border: 2px solid #FFF7C0;
   width:750px;
@@ -128,12 +136,26 @@ header h2{
   font-weight: bold;
   background-color:#66ab8c;
 }
-
+.contactHead{
+  padding-top:200px;
+  font-size:40pt;
+  text-align:center;
+  font-family: 'Luckiest Guy', cursive;
+}
+.contactText{
+  font-size: 20pt;
+  font-family: 'Raleway', sans-serif;
+}
+#cookiePic{
+  margin-left: 250px;
+}
+/* Advertisements */
 .banners{
 display:inline-block;
 margin-top:20px;
 
 }
+/*  Gluten Free */
 .banner1{
   float:left;
   border: 2px solid #FFF7C0;
@@ -148,15 +170,19 @@ margin-top:20px;
 }
 #banner1Head{
   margin-top:-20px;
-  font-size: 20pt;
+  font-size: 17pt;
   padding-bottom: 10px;
+  font-family: 'Luckiest Guy', cursive;
 }
 #banner1Text{
   padding-top:50px;
+  font-family: 'Raleway', sans-serif;
 }
 #cutterPic{
   padding-left:10px;
 }
+
+/* Tshirts */
 .banner2{
   float:right;
   border: 2px solid #FFF7C0;
@@ -173,14 +199,15 @@ margin-top:20px;
   margin-top:-20px;
   font-size: 20pt;
   padding-bottom: 10px;
+  font-family: 'Luckiest Guy', cursive;
 }
-#bannerText{
-  padding-top:50px;
+#banner2Text{
+  font-family: 'Raleway', sans-serif;
 }
 #shirtImg{
   margin-left:120px;
 }
-
+/*  Location Section */
 .locations{  
   float:left;
   margin-right: 400px;
@@ -195,7 +222,28 @@ margin-top:20px;
   font-weight: bold;
   background-color:#66ab8c;
 }
+#locationHead{
+  text-align: center;
+  font-size:25pt;
+  font-family: 'Luckiest Guy', cursive;
+}
+#locationList{
+  margin-top:20px;
+  line-height: 20px;
+  font-size: 17px;
+  font-family: 'Raleway', sans-serif;
+}
+#locationList li{
+  padding-top: 50px;
+}
+/*  Floating Fish Pic */
+#fishPic{
+  position: absolute;
+  margin-top: -250px;
+  margin-left: 800px;
 
+}
+/* Footer */
 footer{
   height:50px;
   margin-top:20px;
@@ -204,3 +252,36 @@ footer{
   padding-top: 100px;
   padding-bottom:20px;
 }
+footer p{
+  font-family: 'Raleway', sans-serif;
+  margin-top: 20px;
+}
+
+/*  Table on Sales Page */
+
+
+table tr, td, th{
+  text-align: left;
+  border: 2px solid #f089c6;
+  font-size: 20pt;
+  padding-right: 20px;
+  width: 100px;
+  height: 40px;
+  color:#450099;
+  font-family: 'Acme', sans-serif;
+}
+
+tr:nth-child(even){
+  background-color: #FFF7C0;
+}
+tr:nth-child(odd){
+  background-color: #66ab8c;
+}
+
+#form{
+  padding-top: 40px;
+  font-size: 15pt;
+  font-weight:bold;
+  font-family: 'Raleway', sans-serif;
+}
+  
