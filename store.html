@@ -2,26 +2,48 @@
 <html>
   <head>
     <title>Forms Demo</title>
+    <link href="test.css" rel="stylesheet" type="text/css" />
+    <link href="css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
   </head>
 
 <body>
   <header>
-    <h1>Buy Our T-Shirts!</h1>
+    <div class="headGroup">
+      <div class="headLogo"><img src="images/chinook.jpg" alt=salmon /></div>
+    <h1 class="mainHead">Pat's Salmon Cookie Shop!!</h1>
+    <div class=topnav>
+      <nav>
+        <ul>
+          <li><a href="index.html">Homepage!</a></li>
+          <li><a href="sales.html">Our Cookie Sales!</a></li>
+        </ul> 
+      </nav>
+    </div>
+    </div>
   </header>
   <main>
-    <form>
+    <div id="shopImg"><img src="images/shirt.jpg" alt="shirt"/></div>
+    <form id="shop"> 
       <fieldset>
-        <label>Name
+        <label>Name 
           <input name ="username"  type="text"/>
-        </label>
-        
-        <label>Address 
+        </label><br />
+        <label>Shipping Address 
           <input name="address" type="text"></input>         
-        </label>
+        </label><br />
+        <label>What size t-shirt would you like? 
+          <input type="checkbox" Name="size" value="XS"/>XS
+          <input type="checkbox" Name="size" value="S"/> S
+          <input type="checkbox" Name="size" value="M"/> M
+          <input type="checkbox" Name="size" value="L"/> L
+          <input type="checkbox" Name="size" value="XL"/> XL
+        </label><br />
+        <input type="submit" name="submit" value = "Submit Order" />
       </fieldset>
     </form>
   </main>
-  <footer></footer>
   <script src="js/app.js"></script>
 </body>
 </html>
